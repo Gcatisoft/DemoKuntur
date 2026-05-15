@@ -1,0 +1,498 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+
+const destacados = [
+  {
+    nombre: 'ProteinBox Supplements',
+    rubro: 'Suplementación deportiva',
+    promo: '30% OFF en proteínas',
+    usos: '312 beneficios usados',
+    color: '#7c3aed',
+  },
+  {
+    nombre: 'Café Central',
+    rubro: 'Gastronomía',
+    promo: '2x1 en desayunos',
+    usos: '891 beneficios usados',
+    color: '#f59e0b',
+  },
+  {
+    nombre: 'RunLab Store',
+    rubro: 'Indumentaria deportiva',
+    promo: '25% OFF en zapatillas',
+    usos: '214 beneficios usados',
+    color: '#0ea5e9',
+  },
+];
+
+const ventajas = [
+  {
+    titulo: 'Más clientes',
+    descripcion:
+      'Miles de socios activos descubren comercios adheridos todos los días.',
+  },
+  {
+    titulo: 'Publicidad automática',
+    descripcion:
+      'Tu negocio aparece en campañas, promociones y secciones destacadas.',
+  },
+  {
+    titulo: 'Hot Sale Kuntur',
+    descripcion:
+      'Participá en campañas especiales para aumentar ventas rápidamente.',
+  },
+  {
+    titulo: 'Validación instantánea',
+    descripcion:
+      'El sistema verifica membresías activas automáticamente.',
+  },
+  {
+    titulo: 'Panel administrativo',
+    descripcion:
+      'Gestioná promociones, campañas y estadísticas desde un solo lugar.',
+  },
+  {
+    titulo: 'Estadísticas en tiempo real',
+    descripcion:
+      'Visualizá beneficios usados, clientes alcanzados y horarios pico.',
+  },
+];
+
+const campañas = [
+  'Hot Sale Kuntur',
+  'Fitness Week',
+  'Happy Hour',
+  'Black Weekend',
+  'Promo Socios VIP',
+  'Semana Salud & Bienestar',
+];
+
+const testimonios = [
+  {
+    comercio: 'Café Central',
+    texto:
+      'Desde que nos adherimos a Kuntur aumentamos muchísimo el movimiento durante la mañana.',
+  },
+  {
+    comercio: 'ProteinBox Supplements',
+    texto:
+      'Las campañas automáticas nos trajeron nuevos clientes todas las semanas.',
+  },
+  {
+    comercio: 'RunLab Store',
+    texto:
+      'El sistema es rápido, moderno y fácil de usar para nuestro equipo.',
+  },
+];
+---
+
+<BaseLayout title="Comercios — Kuntur Benefits">
+  <Navbar currentPage="/comercios" />
+
+  <main class="pt-16 min-h-screen">
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden px-6 py-28 border-b border-white/[0.06]">
+      <div
+        class="absolute inset-0 z-0"
+        style="background-image: linear-gradient(rgba(26,159,125,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(26,159,125,0.04) 1px, transparent 1px); background-size: 64px 64px;"
+      ></div>
+
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-500/[0.04] to-transparent"></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto text-center">
+
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-[12px] font-medium mb-8">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span>
+          Plataforma comercial inteligente para Catamarca
+        </div>
+
+        <h1 class="font-display font-800 text-[clamp(42px,6vw,74px)] leading-[1.02] tracking-[-2px] text-white mb-8">
+          Impulsá tu negocio con
+          <span class="text-brand-400">Kuntur Benefits</span>
+        </h1>
+
+        <p class="max-w-3xl mx-auto text-[18px] leading-relaxed text-white/45 mb-10">
+          Conectamos comercios de San Fernando del Valle de Catamarca
+          con socios activos que consumen todos los días.
+          Más visibilidad, más clientes y campañas inteligentes para aumentar tus ventas.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="#contacto"
+            class="px-7 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 transition-all duration-200 text-white font-display font-700 text-[15px]"
+          >
+            Quiero adherir mi comercio
+          </a>
+
+          <a
+            href="#ventajas"
+            class="px-7 py-3 rounded-xl border border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-200 text-white/70 font-medium text-[15px]"
+          >
+            Ver beneficios
+          </a>
+        </div>
+
+        <!-- STATS -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-16">
+
+          {[
+            { value: '+1.243', label: 'beneficios usados este mes' },
+            { value: '+120', label: 'socios activos diarios' },
+            { value: '24/7', label: 'validación automática' },
+            { value: '+35%', label: 'más visibilidad comercial' },
+          ].map(stat => (
+            <div class="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6 backdrop-blur-xl">
+              <p class="font-display font-800 text-[28px] text-brand-400 mb-2">
+                {stat.value}
+              </p>
+              <p class="text-[13px] text-white/40 leading-relaxed">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HOT SALE -->
+    <section class="py-24 px-6 border-b border-white/[0.06]">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="flex items-center justify-between flex-wrap gap-4 mb-12">
+          <div>
+            <p class="text-brand-400 text-[11px] uppercase tracking-widest font-bold mb-3">
+              Campañas inteligentes
+            </p>
+
+            <h2 class="font-display font-700 text-[38px] text-white tracking-tight">
+              🔥 Hot Sale Kuntur
+            </h2>
+          </div>
+
+          <div class="px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-300 text-[13px] font-medium">
+            Promociones activas esta semana
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          {destacados.map(c => (
+            <div
+              class="group rounded-3xl border border-white/[0.06] overflow-hidden bg-[#0c0f0e] hover:-translate-y-1 transition-all duration-300"
+            >
+
+              <div
+                class="h-40 p-7 flex flex-col justify-between relative overflow-hidden"
+                style={`background: linear-gradient(135deg, ${c.color}30, transparent);`}
+              >
+
+                <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full blur-3xl opacity-30"
+                  style={`background:${c.color};`}
+                ></div>
+
+                <div class="relative z-10">
+                  <span class="text-[11px] uppercase tracking-widest text-white/50">
+                    Comercio destacado
+                  </span>
+
+                  <h3 class="font-display font-700 text-[28px] text-white mt-3">
+                    {c.nombre}
+                  </h3>
+
+                  <p class="text-white/45 text-[14px] mt-1">
+                    {c.rubro}
+                  </p>
+                </div>
+
+                <div class="relative z-10">
+                  <div class="inline-flex px-4 py-2 rounded-full bg-white/10 border border-white/10 text-white text-[13px] font-semibold">
+                    {c.promo}
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="p-6 flex items-center justify-between">
+                <p class="text-[13px] text-white/40">
+                  {c.usos}
+                </p>
+
+                <button class="text-brand-400 text-[13px] font-medium hover:text-brand-300 transition-colors">
+                  Ver campaña →
+                </button>
+              </div>
+
+            </div>
+          ))}
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section id="ventajas" class="py-24 px-6">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="text-center mb-16">
+          <p class="text-brand-400 text-[11px] uppercase tracking-widest font-bold mb-4">
+            Plataforma comercial
+          </p>
+
+          <h2 class="font-display font-700 text-[42px] text-white tracking-tight mb-4">
+            ¿Por qué los comercios eligen Kuntur?
+          </h2>
+
+          <p class="text-white/45 text-[16px] max-w-2xl mx-auto">
+            Más que un sistema de descuentos.
+            Una plataforma pensada para impulsar negocios locales.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          {ventajas.map(v => (
+            <div class="rounded-3xl border border-white/[0.06] bg-[#0c0f0e] p-8 hover:border-brand-500/30 transition-all duration-200 hover:-translate-y-1">
+
+              <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center mb-6">
+                <svg
+                  class="w-6 h-6 text-brand-400"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l5 5L20 7"/>
+                </svg>
+              </div>
+
+              <h3 class="font-display font-700 text-[22px] text-white mb-4">
+                {v.titulo}
+              </h3>
+
+              <p class="text-white/45 leading-relaxed text-[15px]">
+                {v.descripcion}
+              </p>
+
+            </div>
+          ))}
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section class="py-24 px-6 border-y border-white/[0.06] bg-white/[0.02]">
+      <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+
+        <div>
+          <p class="text-brand-400 text-[11px] uppercase tracking-widest font-bold mb-4">
+            Panel inteligente
+          </p>
+
+          <h2 class="font-display font-700 text-[40px] text-white leading-tight mb-6">
+            Control total de campañas y beneficios
+          </h2>
+
+          <p class="text-white/45 text-[16px] leading-relaxed mb-8">
+            Administrá promociones, visualizá estadísticas
+            y seguí el rendimiento de tu comercio en tiempo real.
+          </p>
+
+          <div class="space-y-4">
+
+            {[
+              'Beneficios utilizados hoy',
+              'Horarios con mayor movimiento',
+              'Clientes alcanzados',
+              'Campañas activas',
+              'Promociones destacadas',
+            ].map(item => (
+              <div class="flex items-center gap-3">
+                <div class="w-5 h-5 rounded-full bg-brand-500/10 border border-brand-500/20 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-brand-400"></div>
+                </div>
+
+                <p class="text-white/65 text-[15px]">
+                  {item}
+                </p>
+              </div>
+            ))}
+
+          </div>
+        </div>
+
+        <!-- DASHBOARD MOCKUP -->
+        <div class="rounded-3xl border border-white/[0.06] bg-[#0c0f0e] p-6 shadow-2xl">
+
+          <div class="flex items-center justify-between mb-8">
+            <div>
+              <p class="text-white text-[15px] font-semibold">
+                Dashboard Comercial
+              </p>
+
+              <p class="text-white/30 text-[12px]">
+                Estadísticas en tiempo real
+              </p>
+            </div>
+
+            <div class="px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-[11px]">
+              ONLINE
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4 mb-6">
+
+            {[
+              ['+312', 'beneficios usados'],
+              ['+89%', 'clientes recurrentes'],
+              ['+24', 'campañas activas'],
+              ['+35%', 'más alcance'],
+            ].map(item => (
+              <div class="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5">
+                <p class="font-display font-800 text-[28px] text-brand-400">
+                  {item[0]}
+                </p>
+
+                <p class="text-[12px] text-white/35 mt-1">
+                  {item[1]}
+                </p>
+              </div>
+            ))}
+
+          </div>
+
+          <div class="rounded-2xl border border-brand-500/20 bg-brand-500/5 p-5">
+            <p class="text-brand-300 text-[13px] font-medium mb-2">
+              Campaña activa
+            </p>
+
+            <h3 class="font-display font-700 text-[24px] text-white mb-2">
+              Hot Sale Fitness Week
+            </h3>
+
+            <p class="text-white/45 text-[14px]">
+              +184 visualizaciones en las últimas 24 horas.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CAMPAÑAS -->
+    <section class="py-24 px-6">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="text-center mb-14">
+          <p class="text-brand-400 text-[11px] uppercase tracking-widest font-bold mb-4">
+            Marketing automático
+          </p>
+
+          <h2 class="font-display font-700 text-[40px] text-white">
+            Campañas inteligentes para aumentar ventas
+          </h2>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4">
+
+          {campañas.map(c => (
+            <div class="px-6 py-4 rounded-2xl border border-white/[0.06] bg-[#0c0f0e] hover:border-brand-500/30 transition-all duration-200 hover:-translate-y-1">
+              <p class="text-white/75 text-[15px] font-medium">
+                {c}
+              </p>
+            </div>
+          ))}
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="py-24 px-6 border-t border-white/[0.06] bg-white/[0.02]">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="text-center mb-14">
+          <p class="text-brand-400 text-[11px] uppercase tracking-widest font-bold mb-4">
+            Comercios adheridos
+          </p>
+
+          <h2 class="font-display font-700 text-[40px] text-white">
+            Lo que dicen nuestros comercios
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          {testimonios.map(t => (
+            <div class="rounded-3xl border border-white/[0.06] bg-[#0c0f0e] p-8">
+
+              <div class="flex items-center gap-1 text-amber-400 mb-5">
+                ★ ★ ★ ★ ★
+              </div>
+
+              <p class="text-white/55 leading-relaxed text-[15px] mb-6">
+                “{t.texto}”
+              </p>
+
+              <div class="pt-5 border-t border-white/[0.06]">
+                <p class="font-display font-700 text-white">
+                  {t.comercio}
+                </p>
+
+                <p class="text-white/30 text-[13px] mt-1">
+                  Comercio adherido a Kuntur
+                </p>
+              </div>
+
+            </div>
+          ))}
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contacto" class="py-28 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+
+        <div class="rounded-[32px] border border-brand-500/20 bg-brand-500/5 p-12">
+
+          <p class="text-brand-400 text-[11px] uppercase tracking-widest font-bold mb-4">
+            Sumate hoy
+          </p>
+
+          <h2 class="font-display font-800 text-[48px] leading-tight tracking-tight text-white mb-6">
+            Tu comercio puede ser parte de
+            <span class="text-brand-400">Kuntur Benefits</span>
+          </h2>
+
+          <p class="text-white/45 text-[17px] leading-relaxed max-w-2xl mx-auto mb-10">
+            Formá parte de una plataforma moderna diseñada para impulsar negocios locales,
+            atraer nuevos clientes y generar campañas comerciales inteligentes.
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4">
+
+            <button class="px-8 py-4 rounded-2xl bg-brand-500 hover:bg-brand-400 transition-all duration-200 text-white font-display font-700 text-[15px]">
+              Solicitar adhesión
+            </button>
+
+            <button class="px-8 py-4 rounded-2xl border border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-200 text-white/70 font-medium text-[15px]">
+              Hablar con un asesor
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
